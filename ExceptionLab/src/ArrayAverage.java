@@ -1,17 +1,21 @@
+import java.util.ArrayList;
+
 public class ArrayAverage {
     public static void main(String[] args) {
-        String[] arr = {"a", "b", "c"};
+        ArrayList<String> arr = new ArrayList<>();
+        arr.add("asd");
+        arr.add("2");
+        arr.add("1");
         int sum = 0;
         try{
-            for(int i = 0; i < arr.length; i++){
-                sum += Integer.parseInt(arr[i]);
+            for (int i = 0; i < arr.size() + 1; i++) {
+                sum += Integer.parseInt(arr.get(i));
             }
-            System.out.println(sum / arr.length);
+            System.out.println(sum / (float)arr.size());
         }catch (NumberFormatException e){
             System.out.println("Ошибка преобразования числа");
-        }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("ВЫход за границы массива");
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("Выход за границы массива");
         }
-        System.out.println();
     }
 }
